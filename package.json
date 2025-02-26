@@ -2,7 +2,7 @@
   "name": "product-comparison-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Harshavarthan-N-17.github.io/Product-Comparison-App",
+  "homepage": "https://harshavarthan-n-17.github.io/Product-Comparison-App",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
