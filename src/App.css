@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+/* Added styles for comparison table */
+.comparison-container {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #61dafb
+}
+
+.comparison-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.comparison-table th, .comparison-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: #f4f4f4;
+}
+
+.selection-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.app-container {
+  padding: 20px;
+  background-image: url("D:\SEMESTER 4\Product Comparison App\product-comparison-app\src\image\oip.webp");
+  background-size: 100%;
+}
+p{
+  background-color: bisque; 
+  border-radius: 15px;
+  padding: 5px;
+  font-size: medium;
+}
+h3{
+  background-color: red;
+  font-size: larger;
+  color: #fff;
+  border-radius: 15px;
+  padding: 3px;
+}
