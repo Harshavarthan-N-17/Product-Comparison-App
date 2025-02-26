@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Product-Comparison-App/static/css/main.8976c55c.css",
+    "main.js": "/Product-Comparison-App/static/js/main.4c034982.js",
+    "static/js/453.50ad2477.chunk.js": "/Product-Comparison-App/static/js/453.50ad2477.chunk.js",
+    "static/media/oip.webp": "/Product-Comparison-App/static/media/oip.e8ffaf806100503f3bc1.webp",
+    "index.html": "/Product-Comparison-App/index.html",
+    "main.8976c55c.css.map": "/Product-Comparison-App/static/css/main.8976c55c.css.map",
+    "main.4c034982.js.map": "/Product-Comparison-App/static/js/main.4c034982.js.map",
+    "453.50ad2477.chunk.js.map": "/Product-Comparison-App/static/js/453.50ad2477.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8976c55c.css",
+    "static/js/main.4c034982.js"
+  ]
+}
