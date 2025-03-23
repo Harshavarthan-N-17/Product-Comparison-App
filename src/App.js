@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ProductComparison from "./components/ProductComparison";
 import ProductSearch from "./components/ProductSearch";
 import Login from "./Login";
+import SignUp from "./components/SignUp"; // Import SignUp page
 import "./App.css";
+import "./components/NavBar.css";
+
 
 const App = () => {
   const allProducts = [
-  // Smartphones
+    // Smartphones
   { name: "iPhone 15", category: "Smartphone", price: "79,999", rating: 4.7,features: ["6.1-inch Display", "A16 Bionic", "Dual Camera"] },
   { name: "Samsung S23", category: "Smartphone", price: "74,999", rating: 4.6, features: ["6.2-inch AMOLED", "Snapdragon 8 Gen 2", "Triple Camera"] },
   { name: "OnePlus 11", category: "Smartphone", price: "56,999", rating: 4.5, features: ["6.7-inch AMOLED", "Snapdragon 8 Gen 2", "Hasselblad Camera"] },
@@ -43,8 +47,6 @@ const App = () => {
   { name: "CyberPowerPC Gamer Supreme", category: "PC", price: "1,39,999", rating: 4.6, features: ["Intel i5 12600KF", "RTX 3060", "16GB RAM, 512GB SSD"] },
 ];
 
-  
-
   const [selectedProducts, setSelectedProducts] = useState([null, null]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -55,32 +57,48 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
-      {!isAuthenticated ? (
-        <Login onLogin={() => setIsAuthenticated(true)} />
-      ) : (
-        <>
-          <h1 className="title">Product Comparison</h1>
+    <BrowserRouter> {/* Updated to use BrowserRouter directly */}
+      <div className="app-container">
+        <nav>
+          <Link to="/">Login</Link> |  
+          <Link to="/signup"> Sign Up</Link> {/* Sign Up Link */}
+        </nav>
 
-          <div className="selection-container">
-            {selectedProducts.map((product, index) => (
-              <ProductSearch
-                key={index}
-                index={index}
-                allProducts={allProducts}
-                onProductSelect={handleProductSelect}
-                selectedProduct={product}
-              />
-            ))}
-          </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              !isAuthenticated ? (
+                <Login onLogin={() => setIsAuthenticated(true)} />
+              ) : (
+                <>
+                  <h1 className="title">Product Comparison</h1>
+                  
+                  <div className="selection-container">
+                    {selectedProducts.map((product, index) => (
+                      <ProductSearch
+                        key={index}
+                        index={index}
+                        allProducts={allProducts}
+                        onProductSelect={handleProductSelect}
+                        selectedProduct={product}
+                      />
+                    ))}
+                  </div>
 
-          {selectedProducts.every((p) => p) && (
-            <ProductComparison products={selectedProducts} />
-          )}
-        </>
-      )}
-    </div>
+                  {selectedProducts.every((p) => p) && (
+                    <ProductComparison products={selectedProducts} />
+                  )}
+                </>
+              )
+            }
+          />
+          <Route path="/signup" element={<SignUp />} /> {/* Sign Up Page */}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 
 export default App;
+

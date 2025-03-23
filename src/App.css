@@ -91,3 +91,50 @@ h3{
   border-radius: 15px;
   padding: 3px;
 }
+
+nav a {
+  color: black;        /* Black text */
+  font-weight: bold;   /* Bold font */
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline; /* Optional: Underline on hover */
+}
+
+/* Style for the navigation container */
+.nav-container {
+  display: flex;
+  justify-content: center; /* Centering */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 8px; /* Rounded corners */
+  border: 2px solid black; /* Black border */
+  width: fit-content; /* Fit content size */
+  margin: 20px auto; /* Center on page */
+}
+
+/* Style for Login and Sign Up links */
+.nav-container a {
+  text-decoration: none;
+  color: black; /* Black color */
+  font-weight: bold;
+  font-size: 20px; /* Larger font size */
+  padding: 10px 20px;
+}
+
+/* Add hover effect */
+.nav-container a:hover {
+  color: white;
+  background-color: black; /* Invert colors */
+  border-radius: 5px;
+}
+
+/* Style the separator */
+.nav-container span {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
