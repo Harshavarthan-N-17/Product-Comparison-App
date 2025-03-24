@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../api"; // Import the API service
 import "../SignUp.css";
 
 const SignUp = () => {
@@ -15,11 +16,17 @@ const SignUp = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("User Registered:", formData);
-    alert("Sign Up Successful!");
-    navigate("/"); // Redirect to home page after sign-up
+    try {
+      // Send signup data to backend
+      const response = await api.post("/signup", formData);
+      alert(response.data.message); // Show success message
+      navigate("/"); // Redirect to home page after successful signup
+    } catch (error) {
+      console.error(error.response?.data || "Signup failed");
+      alert(error.response?.data?.message || "Signup failed. Try again.");
+    }
   };
 
   return (
