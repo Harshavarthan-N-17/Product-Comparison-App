@@ -5,8 +5,10 @@ const ProductComparison = ({ products }) => {
     return <p>Please select at least two products to compare.</p>;
   }
 
-  // Extract unique feature names dynamically (assuming all products have features as an object)
-  const featureNames = Object.keys(products[0]?.features || {});
+  // Extract all unique feature names across products
+  const featureNames = [
+    ...new Set(products.flatMap((product) => Object.keys(product.features || {}))),
+  ];
 
   return (
     <div className="comparison-container">
@@ -15,27 +17,33 @@ const ProductComparison = ({ products }) => {
         <thead>
           <tr>
             <th>Feature</th>
-            <th>{products[0]?.name || "Product 1"}</th>
-            <th>{products[1]?.name || "Product 2"}</th>
+            {products.map((product, index) => (
+              <th key={index}>{product.name || `Product ${index + 1}`}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Price (₹)</td>
-            <td>{products[0]?.price ?? "N/A"}</td>
-            <td>{products[1]?.price ?? "N/A"}</td>
+            {products.map((product, index) => (
+              <td key={index}>{product.price ?? "N/A"}</td>
+            ))}
           </tr>
           <tr>
             <td>Rating</td>
-            <td>{products[0]?.rating ? `${products[0].rating} ⭐` : "N/A"}</td>
-            <td>{products[1]?.rating ? `${products[1].rating} ⭐` : "N/A"}</td>
+            {products.map((product, index) => (
+              <td key={index}>
+                {product.rating ? `${product.rating} ⭐` : "N/A"}
+              </td>
+            ))}
           </tr>
           {/* Dynamically display all features */}
           {featureNames.map((feature, index) => (
             <tr key={index}>
               <td>{feature}</td>
-              <td>{products[0]?.features?.[feature] ?? "N/A"}</td>
-              <td>{products[1]?.features?.[feature] ?? "N/A"}</td>
+              {products.map((product, idx) => (
+                <td key={idx}>{product.features?.[feature] ?? "N/A"}</td>
+              ))}
             </tr>
           ))}
         </tbody>

@@ -18,6 +18,7 @@ const ProductSearch = ({ index, allProducts, onProductSelect, selectedProduct })
           <h3>{selectedProduct.name}</h3>
           <p>₹{selectedProduct.price}</p>
           <button 
+            className="remove-button"
             onClick={() => onProductSelect(index, null)} 
             aria-label="Remove product"
           >
@@ -42,13 +43,15 @@ const ProductSearch = ({ index, allProducts, onProductSelect, selectedProduct })
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             aria-label="Search product"
+            autoFocus
           />
-          <button onClick={() => setShowSearch(false)} aria-label="Close search">❌</button>
+          <button className="close-button" onClick={() => setShowSearch(false)} aria-label="Close search">❌</button>
           <div className="product-list">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <button 
                   key={product.name} 
+                  className="product-item"
                   onClick={() => {
                     onProductSelect(index, product);
                     setShowSearch(false);
@@ -59,7 +62,7 @@ const ProductSearch = ({ index, allProducts, onProductSelect, selectedProduct })
                 </button>
               ))
             ) : (
-              <p>No matching products found</p>
+              <p className="no-results">No matching products found</p>
             )}
           </div>
         </div>
