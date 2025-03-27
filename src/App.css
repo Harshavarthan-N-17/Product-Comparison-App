@@ -75,9 +75,12 @@
 
 .app-container {
   padding: 20px;
-  background-image: url("/image/image.jpg");
-  background-size: 100%;
+  background-image: url("/image/image.jpg"); /* ✅ Correct */
+  background-size: cover; /* Ensures image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repetition */
 }
+
 p{
   background-color: bisque; 
   border-radius: 15px;
