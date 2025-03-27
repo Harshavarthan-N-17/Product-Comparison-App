@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Product-Comparison-App/static/css/main.349f8a9b.css",
-    "main.js": "/Product-Comparison-App/static/js/main.c2199bc4.js",
+    "main.css": "/Product-Comparison-App/static/css/main.c6455657.css",
+    "main.js": "/Product-Comparison-App/static/js/main.f8b2cd38.js",
     "static/js/453.50ad2477.chunk.js": "/Product-Comparison-App/static/js/453.50ad2477.chunk.js",
     "static/media/ooip.jpg": "/Product-Comparison-App/static/media/ooip.3cd7aac25ddec4f8a18f.jpg",
     "index.html": "/Product-Comparison-App/index.html",
-    "main.349f8a9b.css.map": "/Product-Comparison-App/static/css/main.349f8a9b.css.map",
-    "main.c2199bc4.js.map": "/Product-Comparison-App/static/js/main.c2199bc4.js.map",
+    "main.c6455657.css.map": "/Product-Comparison-App/static/css/main.c6455657.css.map",
+    "main.f8b2cd38.js.map": "/Product-Comparison-App/static/js/main.f8b2cd38.js.map",
     "453.50ad2477.chunk.js.map": "/Product-Comparison-App/static/js/453.50ad2477.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.349f8a9b.css",
-    "static/js/main.c2199bc4.js"
+    "static/css/main.c6455657.css",
+    "static/js/main.f8b2cd38.js"
   ]
 }
