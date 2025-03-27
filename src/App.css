@@ -75,7 +75,7 @@
 
 .app-container {
   padding: 20px;
-  background-image: url("D:\SEMESTER 4\Product Comparison App\product-comparison-app\src\image\image.jpg");
+  background-image: url("D:\SEMESTER 4\Product Comparison App\product-comparison-app\public\image\image.jpg");
   background-size: 100%;
 }
 p{
@@ -188,7 +188,7 @@ nav a:hover {
 
 /* Style for Compare Products Button */
 .compare-button {
-  background-color: #007bff;
+  background-color: #041222;
   color: white;
   padding: 100px 20px;
   border: none;
@@ -208,7 +208,8 @@ nav a:hover {
 
 /* Style for Logout Button */
 .logout-button {
-  background-color: red;
+  background-color: rgb(0, 0, 0);
+  margin-left: 80%;
   color: white;
   padding: 10px 20px;
   border: none;
