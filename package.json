@@ -2,7 +2,6 @@
   "name": "product-comparison-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "homepage": "https://harshavarthan-n-17.github.io/Product-Comparison-App",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -43,7 +42,10 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "@babel/plugin-syntax-flow": "^7.26.0",
+    "@babel/plugin-transform-react-jsx": "^7.25.9",
+    "gh-pages": "^6.3.0",
+    "tsutils": "^3.21.0",
+    "typescript": "^5.8.2"
   }
 }
-
